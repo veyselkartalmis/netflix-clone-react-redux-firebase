@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import HomeScreen from "./HomeScreen";
+import HomeScreen from "./screens/HomeScreen/HomeScreen";
+import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import {
   BrowserRouter,
   Route,
@@ -8,13 +9,19 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const user = null;
+
   return (
     <div className="app">
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<HomeScreen />}></Route>
-        </Routes>
-      </BrowserRouter>
+      {!user ? (
+        <LoginScreen />
+      ) : (
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<HomeScreen />}></Route>
+          </Routes>
+        </BrowserRouter>
+      )}
     </div>
   );
 }

@@ -1,7 +1,7 @@
-import Banner from "./components/Banner/Banner";
-import Navbar from "./components/Navbar/Navbar";
-import Row from "./components/Row/Row";
-import requests from "./Requests";
+import Banner from "../../components/Banner/Banner";
+import Navbar from "../../components/Navbar/Navbar";
+import Row from "../../components/Row/Row";
+import requests from "../../Requests";
 import "./homeScreen.scss";
 
 function HomeScreen() {
