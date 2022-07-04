@@ -8,12 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice";
 
 function App() {
+
 	const user = useSelector(selectUser);
 	const dispatch = useDispatch();
 
-	/* Burada bir problem var çalışmıyor, data geliyor ama dispatchler devreye girmiyor */
 	useEffect(() => {
-		const unsubscribe = async() =>  auth.onAuthStateChanged((userAuth) => {
+		const unsubscribe = auth.onAuthStateChanged((userAuth) => {
 			if (userAuth) {
 				dispatch(login({
 					uid: userAuth.uid,
@@ -24,7 +24,7 @@ function App() {
 			}
 		});
 		return unsubscribe;
-	});
+	}, []);
 
 	return (
 		<div className="app">
