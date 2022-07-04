@@ -13,7 +13,7 @@ function App() {
 
 	/* Burada bir problem var çalışmıyor, data geliyor ama dispatchler devreye girmiyor */
 	useEffect(() => {
-		const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+		const unsubscribe = async() =>  auth.onAuthStateChanged((userAuth) => {
 			if (userAuth) {
 				dispatch(login({
 					uid: userAuth.uid,
