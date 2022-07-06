@@ -16,3 +16,5 @@ const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
 export { auth, db };
+
+//Firebase üzerinden databaes ve stripe extension aktif edildi.
